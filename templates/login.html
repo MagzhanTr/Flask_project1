@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='log_style.css') }}">
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for msg in messages %}
+					<p><big><center style="color: white;">{{msg}}</center></big></p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<form method="post">
+			<div class="container">
+				<div class="login-form">
+					<div class="login">
+						<h3>SignIn</h3>
+					</div>
+					<input type="text" name="user_name" style="color: white;" placeholder="Enter Username">
+					<input type="password" name="user_password" style="color: white;" placeholder="Enter Password">
+					<button type="submit" style="color: white;" class="btn">SignIn</button>
+				</div>
+			</div>
+		</form>
+		<video autoplay muted loop>
+			<source src="{{ video }}" />
+		</video>
+	</body>
+</html>
